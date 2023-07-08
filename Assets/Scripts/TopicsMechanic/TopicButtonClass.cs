@@ -7,28 +7,25 @@ using UnityEngine.UI;
 public class TopicButtonClass : MonoBehaviour // <3
 {
     public string topic_name="Name";
-    public Sprite icon;
+    public string icon="Path";
     public float mood_update=1.0f;
     public float engagement_update=-1.0f;
     public Button topicButton;
     public TMP_Text text;
     public GameObject Manager;
-    public bool canChangeTopic;
+
     void Start()
     {
         Manager = GameObject.Find("Topic_Manager");
         topicButton = GetComponent<Button>();
         text = GetComponent<TMP_Text>();
-        canChangeTopic = true;
+        
         topicButton.onClick.AddListener(TaskOnClick);
     }
 
     void TaskOnClick()
     {
-        if (canChangeTopic)
-        {
-            Manager.GetComponent<TopicManager>().UpdateByUser(topic_name, mood_update, engagement_update, icon);
-        }
+        Manager.GetComponent<TopicManager>().UpdateByUser(topic_name, mood_update, engagement_update);
     }
     public void DataUpdate(TopicClass topic)
     {

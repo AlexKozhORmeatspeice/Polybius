@@ -664,7 +664,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: videoplayer
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -672,26 +672,26 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 1
+    m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/TopicsMechanic
+    - Assets/Videos
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: videoplayer
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/TopicsMechanic
+  - Assets/Videos
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "D:\\Users\\\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\\Documents\\GitHub\\Polybius"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e6650000
-    m_LastClickedID: 26086
-    m_ExpandedIDs: 00000000e0620000ec62000000ca9a3bffffff7f
+    m_SelectedIDs: f4620000
+    m_LastClickedID: 25332
+    m_ExpandedIDs: 00000000e062000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300004e6e0000726100000000000050650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -859,9 +859,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ee210000
+      m_SelectedIDs: bef9ffff
       m_LastClickedID: 0
-      m_ExpandedIDs: 6cebffff12fbffff6a610000aa610000ba610000
+      m_ExpandedIDs: 12fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1293,9 +1293,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.34993446, y: 2.6675715, z: 1551.3632}
+    m_Target: {x: -0.7028622, y: 0.9679335, z: 1384.5543}
     speed: 2
-    m_Value: {x: 0.06854993, y: 2.7511268, z: 1628.6556}
+    m_Value: {x: -0.9563511, y: 1.0105555, z: 1454.0321}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1345,9 +1345,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.2779627
+    m_Target: 4.8178353
     speed: 2
-    m_Value: 5.5266623
+    m_Value: 5.0448537
   m_Ortho:
     m_Target: 1
     speed: 2
