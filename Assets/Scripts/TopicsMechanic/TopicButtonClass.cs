@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class TopicButtonClass : MonoBehaviour // <3
 {
-
-
     public string topic_name="Name";
     public string icon="Path";
     public float mood_update=1.0f;
@@ -21,7 +19,6 @@ public class TopicButtonClass : MonoBehaviour // <3
         Manager = GameObject.Find("Topic_Manager");
         topicButton = GetComponent<Button>();
         text = GetComponent<TMP_Text>();
-        
         
         topicButton.onClick.AddListener(TaskOnClick);
     }
