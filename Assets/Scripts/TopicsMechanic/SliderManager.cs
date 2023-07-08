@@ -5,10 +5,15 @@ using UnityEngine.UI;
 
 public class SliderManager : MonoBehaviour
 {
+    public static SliderManager instance;
+    
     GameObject mood_slider;
     GameObject er_slider;
     void Start()
     {
+        if (instance == null)
+            instance = this;
+        
         mood_slider = GameObject.Find("Slider (1)");
         er_slider = GameObject.Find("Slider");
     }
