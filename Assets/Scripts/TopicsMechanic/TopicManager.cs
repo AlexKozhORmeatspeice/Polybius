@@ -18,8 +18,19 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
     [SerializeField] private GameObject ThirdButton;
     [SerializeField] private GameObject CurrentTheme;
     [SerializeField] private GameObject SliderManager;
-    private List<List<string>> TopicList = new List<List<string>>();
+    [SerializeField] private GameObject HeaderManager;
+    [SerializeField] private GameObject NewsManager;
+    [SerializeField] private GameObject PictureManager;
+
+
+    public List<Sprite> picturesList;
+    private List<string> topics = new List<string> {"anime :(", "blogger!", "wow,kitty!<3", "city news",
+    "games!!", "top 10 lifehacks", "political news", "wow look i'm rich!!", "social problems", "do you like hurt other people?"};
+    private List<float> mood_updates = new List<float> {-2f, 2f, 4f, -1f, 3.5f, 1.2f, -3.1f, -1.4f, -2.5f, -4f};
+    private List<float> er_update = new List<float> { -1f, 3f, 4f, -2f, 2f, -3f, -3.2f, 2.1f, 1.2f, -4f };
+    private List<TopicClass> TopicList = new List<TopicClass>();
     
+
     private List<GameObject> Buttons = new List<GameObject>();
     private Unity.Mathematics.Random RandomGenerator = new Unity.Mathematics.Random(3232);
     void Start()
@@ -29,13 +40,6 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         Buttons.Add(FirstButton);
         Buttons.Add(SecondButton);
         Buttons.Add(ThirdButton);
-
-        
-        for (int i = 1; i < 100; i++)
-        {
-            TopicList.Add(new List<string> { $"Theme {RandomGenerator.NextInt(1,101)}", $"Path {i}",
-                RandomGenerator.NextFloat(-5.0f, 5.0f).ToString("#.#"), RandomGenerator.NextFloat(-5.0f, 5.0f).ToString("#.#") });
-        }
         UpdateButtons();
     }
 
@@ -43,6 +47,10 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
     private IEnumerator Cooldown()
     {
         canChangeTopic = false;
+        foreach (GameObject btn in Buttons)
+        {
+            btn.GetComponent<TopicButtonClass>().canChangeTopic = false;
+        }
         for (int i = 0; i <= 5; i++)
         {
             slider.value = 5 - i;
@@ -50,13 +58,18 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         }
 
         canChangeTopic = true;
+        foreach (GameObject btn in Buttons)
+        {
+            btn.GetComponent<TopicButtonClass>().canChangeTopic = true;
+        }
         UpdateButtons();
     }
-    public void UpdateByUser(string choice, float mood_upd, float er_upd)
+    public void UpdateByUser(string choice, float mood_upd, float er_upd, Sprite pic)
     {
         CurrentTheme.GetComponent<TMP_Text>().text=choice;
         
         SliderManager.GetComponent<SliderManager>().ChangeSliders(mood_upd, er_upd);
+        PictureManager.GetComponent<PicturesManager>().UpdatePictures(pic);
         for (int i=0; i<3; i++)
         {
             GameObject btn = Buttons[i];
@@ -64,6 +77,9 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         }
         StartCoroutine(Cooldown());
         UpdateButtons();
+        HeaderManager.GetComponent<HeaderManager>().UpdateHeaders(choice);
+        NewsManager.GetComponent<NewsManager>().UpdateNews();
+        
     }
     
     void UpdateButtons()
@@ -74,7 +90,7 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         List<int> used = new List<int>();
         while (used.Count != 3)
         {
-            int index = RandomGenerator.NextInt(0, 100);
+            int index = RandomGenerator.NextInt(0, 10);
             if (!(used.Contains(index)) && used.Count != 3)
             {
                 used.Add(index);
@@ -84,10 +100,10 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         for (int i = 0; i < 3; i++)
         {
             GameObject btn = Buttons[i];
-            string topic_name = TopicList[used[i]][0];
-            string icon = TopicList[used[i]][1];
-            float mood_update = (float)Convert.ToDouble(TopicList[used[i]][2]);
-            float engagement_update = (float)Convert.ToDouble(TopicList[used[i]][3]);
+            string topic_name = topics[used[i]];
+            Sprite icon = picturesList[used[i]];
+            float mood_update = mood_updates[used[i]];
+            float engagement_update = er_update[used[i]];
             btn.GetComponent<TopicButtonClass>().DataUpdate(new TopicClass(topic_name, icon, mood_update, engagement_update));
             btn.GetComponent<TMP_Text>().text = btn.GetComponent<TopicButtonClass>().ToString();
         }
