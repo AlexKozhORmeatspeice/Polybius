@@ -17,7 +17,8 @@ public class Meme : MonoBehaviour
     private List<string> comments;
     private int cLikes;
     private int cDeslikes;
-
+    public List<AudioClip> cSounds;
+    private AudioSource sound;
     public bool clickable;
     
     // Start is called before the first frame update
@@ -26,7 +27,8 @@ public class Meme : MonoBehaviour
         clickable = false;
         deslikesObj.text = "Likes\n";
         likesObj.text = "Deslikes\n";
-        
+        sound = GetComponent<AudioSource>();
+
         foreach (var commentObj in commentsObj)
         {
             commentObj.text = "";
@@ -60,7 +62,8 @@ public class Meme : MonoBehaviour
     {
         if (!clickable)
             return;
-        
+        sound.clip = cSounds[(int)nowVibe];
+        sound.Play();
         StartCoroutine(EventManager.instance.CheckStats(nowVibe));
     }
 
