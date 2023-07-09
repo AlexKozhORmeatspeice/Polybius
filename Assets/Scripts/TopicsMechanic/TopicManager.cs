@@ -10,6 +10,8 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ButtonManager, ThemeManager ï¿½ SliderManager, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 {
+    public static TopicManager instance;
+    
     [SerializeField] private Slider slider;
     private bool canChangeTopic;
     
@@ -35,6 +37,11 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
     private Unity.Mathematics.Random RandomGenerator = new Unity.Mathematics.Random(3232);
     void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        
         canChangeTopic = true;
         
         Buttons.Add(FirstButton);
@@ -51,9 +58,9 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         {
             btn.GetComponent<TopicButtonClass>().canChangeTopic = false;
         }
-        for (int i = 0; i <= 5; i++)
+        for (int i = 0; i <= 3; i++)
         {
-            slider.value = 5 - i;
+            slider.value = 3 - i;
             yield return new WaitForSeconds(1);
         }
 
@@ -82,7 +89,7 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         
     }
     
-    void UpdateButtons()
+    public void UpdateButtons()
     {
         if (!canChangeTopic)
             return;
@@ -107,5 +114,35 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
             btn.GetComponent<TopicButtonClass>().DataUpdate(new TopicClass(topic_name, icon, mood_update, engagement_update));
             btn.GetComponent<TMP_Text>().text = btn.GetComponent<TopicButtonClass>().ToString();
         }
+    }
+
+    public IEnumerator FreezeButtons(float time)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject btn = Buttons[i];
+            btn.GetComponent<TMP_Text>().text = "wait!";
+        }
+
+        canChangeTopic = false;
+        foreach (GameObject btn in Buttons)
+        {
+            btn.GetComponent<TopicButtonClass>().canChangeTopic = false;
+        }
+
+        yield return new WaitForSeconds(time);
+
+        canChangeTopic = true;
+        foreach (GameObject btn in Buttons)
+        {
+            btn.GetComponent<TopicButtonClass>().canChangeTopic = true;
+        }
+
+        UpdateButtons();
+    }
+
+    void Update()
+    {
+
     }
 }

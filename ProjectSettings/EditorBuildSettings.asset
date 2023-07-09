@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: 69332dc1dabb332488f76f0361608ced
+  - enabled: 1
+    path: Assets/Scenes/Plays/Morning.unity
+    guid: 6680ded1b7aebc64e93265992ebd0df6
+  - enabled: 1
+    path: Assets/Scenes/Plays/Day.unity
+    guid: 534cb0fa102cc804c982dfb597fc6aa1
+  - enabled: 1
+    path: Assets/Scenes/Plays/Evening.unity
+    guid: c386282a8603c6a449ad43a24007a57a
+  - enabled: 1
+    path: Assets/Scenes/Plays/Night.unity
+    guid: de58707e77514a44d983029c38f77459
   m_configObjects: {}

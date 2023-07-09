@@ -3,16 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using Media;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class EventManager : MonoBehaviour
 {
+    [SerializeField] private string nextScene;
     public static EventManager instance;
     [SerializeField] private VideoPlayer _videoPlayer;
     [SerializeField] private VideoClip interruption;
     
     [Serializable] private struct Video
     {
+        public bool canChangeMood;
         public VideoClip videoClip;
         public float playLength;
         public Event eventStats;
@@ -52,6 +55,17 @@ public class EventManager : MonoBehaviour
         Video nowVideo = _videos[indVideo];
         
         _videoPlayer.clip = nowVideo.videoClip;
+        if (!nowVideo.canChangeMood)
+        {
+            StartCoroutine(TopicManager.instance.FreezeButtons(nowVideo.playLength + 0.5f));
+            print(SliderManager.instance);
+            SliderManager.instance.canChange = false;
+        }
+        else
+        {
+            SliderManager.instance.canChange = true;
+            TopicManager.instance.UpdateButtons();
+        }
         yield return new WaitForSeconds(nowVideo.playLength);
         
 
@@ -59,17 +73,25 @@ public class EventManager : MonoBehaviour
         {
             MediaManager.instance.SetComboCards();
             _videoPlayer.Stop();
-
+            
             nowEvent = nowVideo.eventStats;
         }
         else
         {
             _videoPlayer.clip = interruption;
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.5f);
+            
+            SliderManager.instance.canChange = true;
             
             indVideo++;
             if (indVideo <= _videos.Count - 1)
+            {
                 StartCoroutine(PlayNextVideo());
+            }
+            else
+            {
+                SceneManager.LoadScene(nextScene);
+            }
             
         }
     }
@@ -97,10 +119,18 @@ public class EventManager : MonoBehaviour
         
         _videoPlayer.clip = interruption;
         yield return new WaitForSeconds(1.0f);
-            
+        
+        SliderManager.instance.canChange = true;
         indVideo++;
         if (indVideo <= _videos.Count - 1)
+        {
             StartCoroutine(PlayNextVideo());
+        }
+        else
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+            
     }
     
 }

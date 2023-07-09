@@ -659,9 +659,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2139701990}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 30
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 15
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2294,9 +2294,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 283910424}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 30
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 15
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4898,10 +4898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7b573283c399144913b72c91105a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: Evening
   _videoPlayer: {fileID: 1727311691}
   interruption: {fileID: 32900000, guid: 373cc0e0b5fd05b4db37daa10ac07264, type: 3}
   _videos:
-  - videoClip: {fileID: 32900000, guid: 820a965b4b431c04d803853568d97b58, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: 820a965b4b431c04d803853568d97b58, type: 3}
     playLength: 32
     eventStats:
       isEvent: 0
@@ -4911,7 +4913,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 0}
       ifAngryVibeF: 0
       ifAngryVibeClip: {fileID: 0}
-  - videoClip: {fileID: 32900000, guid: 6f24dae4878755447b3473c7a827c5b9, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: 6f24dae4878755447b3473c7a827c5b9, type: 3}
     playLength: 30
     eventStats:
       isEvent: 0
@@ -4921,7 +4924,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 0}
       ifAngryVibeF: 0
       ifAngryVibeClip: {fileID: 0}
-  - videoClip: {fileID: 32900000, guid: 5cf9c7701756c9a4a95abc0cd6aeba51, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: 5cf9c7701756c9a4a95abc0cd6aeba51, type: 3}
     playLength: 50
     eventStats:
       isEvent: 0
@@ -4931,7 +4935,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 0}
       ifAngryVibeF: 0
       ifAngryVibeClip: {fileID: 0}
-  - videoClip: {fileID: 32900000, guid: 4b7701509a0a9114f9d3444907f66232, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: 4b7701509a0a9114f9d3444907f66232, type: 3}
     playLength: 7.5
     eventStats:
       isEvent: 1
@@ -4941,7 +4946,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 32900000, guid: bd28e3fbe7e9e39449eb333001ccfd49, type: 3}
       ifAngryVibeF: -10
       ifAngryVibeClip: {fileID: 32900000, guid: 505e333ecc4d5ea4cbe8b9c45907129b, type: 3}
-  - videoClip: {fileID: 32900000, guid: 5cf9c7701756c9a4a95abc0cd6aeba51, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: 5cf9c7701756c9a4a95abc0cd6aeba51, type: 3}
     playLength: 50
     eventStats:
       isEvent: 0
@@ -4951,7 +4957,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 32900000, guid: bd28e3fbe7e9e39449eb333001ccfd49, type: 3}
       ifAngryVibeF: -10
       ifAngryVibeClip: {fileID: 32900000, guid: 505e333ecc4d5ea4cbe8b9c45907129b, type: 3}
-  - videoClip: {fileID: 32900000, guid: 3e45525e62d8ad94bacd939abbee3bb2, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: 3e45525e62d8ad94bacd939abbee3bb2, type: 3}
     playLength: 31
     eventStats:
       isEvent: 0
@@ -4961,7 +4968,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 32900000, guid: bd28e3fbe7e9e39449eb333001ccfd49, type: 3}
       ifAngryVibeF: -10
       ifAngryVibeClip: {fileID: 32900000, guid: 505e333ecc4d5ea4cbe8b9c45907129b, type: 3}
-  - videoClip: {fileID: 32900000, guid: 168f6ef970c5e794c92b8374b42a3af9, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: 168f6ef970c5e794c92b8374b42a3af9, type: 3}
     playLength: 3
     eventStats:
       isEvent: 0
@@ -4971,7 +4979,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 32900000, guid: bd28e3fbe7e9e39449eb333001ccfd49, type: 3}
       ifAngryVibeF: -10
       ifAngryVibeClip: {fileID: 32900000, guid: 505e333ecc4d5ea4cbe8b9c45907129b, type: 3}
-  - videoClip: {fileID: 32900000, guid: 2f365063c60e03d4bb452dadba63387c, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: 2f365063c60e03d4bb452dadba63387c, type: 3}
     playLength: 50
     eventStats:
       isEvent: 0
@@ -4981,7 +4990,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 32900000, guid: bd28e3fbe7e9e39449eb333001ccfd49, type: 3}
       ifAngryVibeF: -10
       ifAngryVibeClip: {fileID: 32900000, guid: 505e333ecc4d5ea4cbe8b9c45907129b, type: 3}
-  - videoClip: {fileID: 32900000, guid: dafc850c15f011b408963b341acb6461, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: dafc850c15f011b408963b341acb6461, type: 3}
     playLength: 50
     eventStats:
       isEvent: 1
@@ -5750,6 +5760,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a6c1b75b5fa154cb9d448e575491ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1.03
+  nextScene: Evening
+  canChange: 0
+  mood_slider: {fileID: 0}
+  er_slider: {fileID: 0}
 --- !u!1 &2139701989
 GameObject:
   m_ObjectHideFlags: 0
