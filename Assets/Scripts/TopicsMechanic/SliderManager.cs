@@ -54,7 +54,7 @@ public class SliderManager : MonoBehaviour
    private IEnumerator LowER()
    {
        changing = true;
-       ChangeSliders(0.0f, -Mathf.Pow(speed, Time.time - stTime));
+       ChangeSliders(0.0f, -1);
        yield return new WaitForSeconds(2.0f);
        
        if (canChange)
