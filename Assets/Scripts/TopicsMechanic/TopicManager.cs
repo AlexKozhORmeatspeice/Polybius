@@ -83,7 +83,8 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         {
             btn.GetComponent<TopicButtonClass>().canChangeTopic = true;
         }
-        UpdateButtons();
+        if(canChangeTopic)
+            UpdateButtons();
     }
     public void UpdateByUser(string choice, float mood_upd, float er_upd, Sprite pic)
     {
@@ -97,7 +98,7 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
             btn.GetComponent<TMP_Text>().text = "wait!";
         }
         StartCoroutine(Cooldown());
-        UpdateButtons();
+        
         HeaderManager.GetComponent<HeaderManager>().UpdateHeaders(choice);
         NewsManager.GetComponent<NewsManager>().UpdateNews();
         
