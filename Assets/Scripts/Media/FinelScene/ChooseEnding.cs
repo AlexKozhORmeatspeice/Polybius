@@ -6,7 +6,7 @@ using UnityEngine.Video;
 
 public class ChooseEnding : MonoBehaviour
 {
-    private VideoPlayer _player;
+    [SerializeField] private VideoPlayer _player;
     
     [SerializeField] private VideoClip goodEnding;
     [SerializeField] private VideoClip badEnding;
