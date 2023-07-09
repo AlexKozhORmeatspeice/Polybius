@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayScript : MonoBehaviour
 {
-    [SerializeField] GameObject LoadManager;
+    
     private Button playButton;
     
     
@@ -19,7 +19,12 @@ public class PlayScript : MonoBehaviour
    private void ChangeScene()
     {
         CrossSceneInfo.nextScene = 1;
-        SceneManager.LoadScene("Loading");
+        StartCoroutine(LoadScene());
     }
     
+    private IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Loading");
+    }
 }

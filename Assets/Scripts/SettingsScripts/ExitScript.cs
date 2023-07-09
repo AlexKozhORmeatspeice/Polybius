@@ -11,7 +11,12 @@ public class ExitScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             CrossSceneInfo.nextScene = 0;
-            SceneManager.LoadScene("Loading");
+            StartCoroutine(LoadScene());
         }
+    }
+    private IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene("Loading");
     }
 }

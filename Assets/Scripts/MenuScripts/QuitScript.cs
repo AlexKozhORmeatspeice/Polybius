@@ -14,7 +14,12 @@ public class QuitScript : MonoBehaviour
 
     private void Quit()
     {
-        Application.Quit();
+        StartCoroutine(QuitGame());
     }
     
+    private IEnumerator QuitGame()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Application.Quit();
+    }
 }

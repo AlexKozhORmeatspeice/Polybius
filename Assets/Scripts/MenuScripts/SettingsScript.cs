@@ -16,7 +16,12 @@ public class SettingsScript : MonoBehaviour
     private void ChangeScene()
     {
         CrossSceneInfo.nextScene = 2;
-        SceneManager.LoadScene("Loading");
+        StartCoroutine(LoadScene());
     }
     
+    private IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene("Loading");
+    }
 }
