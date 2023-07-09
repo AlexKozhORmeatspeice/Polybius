@@ -31,9 +31,9 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
     private List<float> mood_updates = new List<float> {-2f, 2f, 4f, -1f, 3.5f, 1.2f, -3.1f, -1.4f, -2.5f, -4f};
     private List<float> er_update = new List<float> { -1f, 3f, 4f, -2f, 2f, -3f, -3.2f, 2.1f, 1.2f, -4f };
     private List<TopicClass> TopicList = new List<TopicClass>();
-    
 
-    private List<GameObject> Buttons = new List<GameObject>();
+
+    private List<GameObject> Buttons;
     private Unity.Mathematics.Random RandomGenerator = new Unity.Mathematics.Random(3232);
     void Start()
     {
@@ -41,13 +41,27 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         {
             instance = this;
         }
-        
+
+        slider = GameObject.Find("Time").GetComponent<Slider>();
         canChangeTopic = true;
+        slider.maxValue = 3;
         
+        Buttons = new List<GameObject>();
         Buttons.Add(FirstButton);
         Buttons.Add(SecondButton);
         Buttons.Add(ThirdButton);
-        UpdateButtons();
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject btn = Buttons[i];
+            btn.GetComponent<TMP_Text>().text = "wait!";
+        }
+
+        canChangeTopic = false;
+        foreach (GameObject btn in Buttons)
+        {
+            btn.GetComponent<TopicButtonClass>().canChangeTopic = false;
+        }
+        
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
@@ -122,13 +136,11 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
         {
             GameObject btn = Buttons[i];
             btn.GetComponent<TMP_Text>().text = "wait!";
+            
+            btn.GetComponent<TopicButtonClass>().canChangeTopic = false;
         }
 
         canChangeTopic = false;
-        foreach (GameObject btn in Buttons)
-        {
-            btn.GetComponent<TopicButtonClass>().canChangeTopic = false;
-        }
 
         yield return new WaitForSeconds(time);
 

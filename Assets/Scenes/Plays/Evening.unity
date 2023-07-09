@@ -5553,7 +5553,7 @@ MonoBehaviour:
   interruption: {fileID: 32900000, guid: 373cc0e0b5fd05b4db37daa10ac07264, type: 3}
   _videos:
   - canChangeMood: 0
-    videoClip: {fileID: 32900000, guid: c258b7fd4d4f1094e9e1eccd1d2b2be3, type: 3}
+    videoClip: {fileID: 32900000, guid: a0a11688614ce454aae072ab56930886, type: 3}
     playLength: 8
     eventStats:
       isEvent: 0
@@ -5563,7 +5563,7 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 0}
       ifAngryVibeF: 0
       ifAngryVibeClip: {fileID: 0}
-  - canChangeMood: 0
+  - canChangeMood: 1
     videoClip: {fileID: 32900000, guid: bc5bf1f6af9104e4590e10c70b75746a, type: 3}
     playLength: 46
     eventStats:

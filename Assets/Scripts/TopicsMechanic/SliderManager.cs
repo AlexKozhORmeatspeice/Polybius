@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SliderManager : MonoBehaviour
 {
     public static SliderManager instance;
-    [SerializeField] private float speed = 1.03f;
+    [SerializeField] private float speed = 1.0003f;
     [SerializeField] private string nextScene; 
     public bool canChange;
     private bool changing;

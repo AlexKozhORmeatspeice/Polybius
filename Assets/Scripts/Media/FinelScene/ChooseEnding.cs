@@ -12,7 +12,7 @@ public class ChooseEnding : MonoBehaviour
     [SerializeField] private VideoClip badEnding;
     // Start is called before the first frame update
 
-    public void ChooseEnd()
+    public void Start()
     {
         Slider slider = SliderManager.instance.mood_slider.GetComponent<Slider>();
         
