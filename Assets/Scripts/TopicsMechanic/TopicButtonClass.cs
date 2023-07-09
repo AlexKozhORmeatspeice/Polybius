@@ -23,7 +23,7 @@ public class TopicButtonClass : MonoBehaviour // <3
         sound = GetComponent<AudioSource>();
         topicButton = GetComponent<Button>();
         text = GetComponent<TMP_Text>();
-        canChangeTopic = true;
+        canChangeTopic = false;
         isPlaying = false;
         topicButton.onClick.AddListener(TaskOnClick);
     }

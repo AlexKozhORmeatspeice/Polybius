@@ -25,6 +25,7 @@ public class SliderManager : MonoBehaviour
         stTime = Time.time;
         mood_slider = GameObject.Find("Slider (1)");
         er_slider = GameObject.Find("Slider");
+        mood_slider.GetComponent<Slider>().value = CrossSceneInfo.currentMood;
     }
 
     void Update()
@@ -48,7 +49,9 @@ public class SliderManager : MonoBehaviour
     }
    public void GameOverEvent()
    {
-       SceneManager.LoadScene(nextScene);
+        CrossSceneInfo.nextScene = nextScene;
+        CrossSceneInfo.currentMood = mood_slider.GetComponent<Slider>().value;
+        SceneManager.LoadScene("Loading");
    }
 
    private IEnumerator LowER()

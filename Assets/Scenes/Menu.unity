@@ -1222,7 +1222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.67687476, y: 0.23429629}
   m_AnchorMax: {x: 0.91800004, y: 0.36366665}
-  m_AnchoredPosition: {x: -2, y: 6}
+  m_AnchoredPosition: {x: -2.4597168, y: 32}
   m_SizeDelta: {x: -1.75, y: 2.6799927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463815677
@@ -1398,7 +1398,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.9777198
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1525,7 +1525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.73960423, y: 0.41285187}
   m_AnchorMax: {x: 0.85743755, y: 0.5351852}
-  m_AnchoredPosition: {x: -4.5, y: 5}
+  m_AnchoredPosition: {x: -4.540222, y: 34.06}
   m_SizeDelta: {x: 2.0700073, y: -0.19999695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764996466
@@ -1575,7 +1575,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 114.15
+  m_fontSize: 113
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 2.2610397, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

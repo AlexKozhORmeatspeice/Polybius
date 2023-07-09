@@ -15,7 +15,7 @@ public class SettingsScript : MonoBehaviour
 
     private void ChangeScene()
     {
-        CrossSceneInfo.nextScene = 2;
+        CrossSceneInfo.nextScene = "Settings";
         StartCoroutine(LoadScene());
     }
     

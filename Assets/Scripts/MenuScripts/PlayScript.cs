@@ -18,7 +18,8 @@ public class PlayScript : MonoBehaviour
 
    private void ChangeScene()
     {
-        CrossSceneInfo.nextScene = 4;
+        CrossSceneInfo.currentMood = 15;
+        CrossSceneInfo.nextScene = "Morning";
         StartCoroutine(LoadScene());
     }
     

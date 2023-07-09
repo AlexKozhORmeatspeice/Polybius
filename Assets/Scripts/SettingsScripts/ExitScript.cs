@@ -10,7 +10,7 @@ public class ExitScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            CrossSceneInfo.nextScene = 0;
+            CrossSceneInfo.nextScene = "Menu";
             StartCoroutine(LoadScene());
         }
     }

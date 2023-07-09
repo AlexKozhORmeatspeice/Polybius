@@ -28,8 +28,8 @@ public class TopicManager : MonoBehaviour //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï
     public List<Sprite> picturesList;
     private List<string> topics = new List<string> {"anime :(", "blogger!", "wow,kitty!<3", "city news",
     "games!!", "top 10 lifehacks", "political news", "wow look i'm rich!!", "social problems", "do you like hurt other people?"};
-    private List<float> mood_updates = new List<float> {-2f, 2f, 4f, -1f, 3.5f, 1.2f, -3.1f, -1.4f, -2.5f, -4f};
-    private List<float> er_update = new List<float> { -1f, 3f, 4f, -2f, 2f, -3f, -3.2f, 2.1f, 1.2f, -4f };
+    private List<float> mood_updates = new List<float> {-5f, 3f, 5f, -3f, 4.5f, 3.2f, -4.3f, -3.2f, -3.9f, -5f};
+    private List<float> er_update = new List<float> { -7.8f, 8.5f, 10f, -7.2f, 9.2f, -9.3f, -8.8f, 7.9f, 7.1f, -8f };
     private List<TopicClass> TopicList = new List<TopicClass>();
 
 

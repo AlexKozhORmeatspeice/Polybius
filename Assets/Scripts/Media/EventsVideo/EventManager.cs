@@ -5,6 +5,7 @@ using Media;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
@@ -90,7 +91,9 @@ public class EventManager : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene(nextScene);
+                CrossSceneInfo.currentMood = GameObject.Find("Slider (1)").GetComponent<Slider>().value;
+                CrossSceneInfo.nextScene = nextScene;
+                SceneManager.LoadScene("Loading");
             }
             
         }
