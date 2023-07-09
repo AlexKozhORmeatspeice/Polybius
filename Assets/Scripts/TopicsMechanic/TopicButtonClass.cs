@@ -14,7 +14,7 @@ public class TopicButtonClass : MonoBehaviour // <3
     public TMP_Text text;
     public GameObject Manager;
     public bool canChangeTopic;
-    private AudioSource sound;
+    public AudioSource sound;
     public List<AudioClip> sounds;
     private bool isPlaying;
     void Start()

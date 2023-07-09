@@ -18,7 +18,7 @@ public class Meme : MonoBehaviour
     private int cLikes;
     private int cDeslikes;
     public List<AudioClip> cSounds;
-    private AudioSource sound;
+    public AudioSource sound;
     public bool clickable;
     
     // Start is called before the first frame update

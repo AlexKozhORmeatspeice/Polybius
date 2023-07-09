@@ -18,7 +18,7 @@ public class PlayScript : MonoBehaviour
 
    private void ChangeScene()
     {
-        CrossSceneInfo.nextScene = 1;
+        CrossSceneInfo.nextScene = 4;
         StartCoroutine(LoadScene());
     }
     
