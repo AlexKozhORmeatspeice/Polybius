@@ -186,10 +186,17 @@ MonoBehaviour:
     With
     a video camera you learn about a person''s attention and mood
 
-    
+
 
     Target:
-    a young man who has a job interview today. Spoil his mood'
+    a young man who has a job interview today. Spoil his mood
+
+
+    ER (Engagement
+    Rate) - if it drops below zero, the user is distracted from the application
+
+    MOOD
+    - it should be lowered as much as possible'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -216,7 +223,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.05
+  m_fontSize: 35.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
