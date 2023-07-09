@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c6b191b6ecb82004f87897d737091d82
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - UNI-VGA_mx
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b026c248b1da37e4db38da0dd7a643f1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
