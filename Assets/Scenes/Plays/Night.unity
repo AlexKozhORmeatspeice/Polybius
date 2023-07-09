@@ -3784,6 +3784,7 @@ MonoBehaviour:
   text: {fileID: 0}
   Manager: {fileID: 0}
   canChangeTopic: 0
+  sounds: []
 --- !u!114 &1402757799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4372,6 +4373,7 @@ MonoBehaviour:
   text: {fileID: 0}
   Manager: {fileID: 0}
   canChangeTopic: 0
+  sounds: []
 --- !u!114 &1658754699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4600,7 +4602,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -4898,10 +4900,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7b573283c399144913b72c91105a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: 
   _videoPlayer: {fileID: 1727311691}
   interruption: {fileID: 32900000, guid: 373cc0e0b5fd05b4db37daa10ac07264, type: 3}
   _videos:
-  - videoClip: {fileID: 32900000, guid: c258b7fd4d4f1094e9e1eccd1d2b2be3, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: c258b7fd4d4f1094e9e1eccd1d2b2be3, type: 3}
     playLength: 5
     eventStats:
       isEvent: 0
@@ -4911,7 +4915,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 0}
       ifAngryVibeF: 0
       ifAngryVibeClip: {fileID: 0}
-  - videoClip: {fileID: 32900000, guid: 0928d2fc1df91324b82ebcd86b349111, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: 0928d2fc1df91324b82ebcd86b349111, type: 3}
     playLength: 5
     eventStats:
       isEvent: 1
@@ -4921,7 +4926,8 @@ MonoBehaviour:
       ifFunnyVibeClip: {fileID: 32900000, guid: 1011965649d74334f81e3bf407f71d85, type: 3}
       ifAngryVibeF: -10
       ifAngryVibeClip: {fileID: 32900000, guid: e8293c348b4c36449ac03de8e517967c, type: 3}
-  - videoClip: {fileID: 32900000, guid: c258b7fd4d4f1094e9e1eccd1d2b2be3, type: 3}
+  - canChangeMood: 0
+    videoClip: {fileID: 32900000, guid: c258b7fd4d4f1094e9e1eccd1d2b2be3, type: 3}
     playLength: 1000
     eventStats:
       isEvent: 0
@@ -5107,6 +5113,7 @@ MonoBehaviour:
   text: {fileID: 0}
   Manager: {fileID: 0}
   canChangeTopic: 0
+  sounds: []
 --- !u!114 &1874772515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5690,6 +5697,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a6c1b75b5fa154cb9d448e575491ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1.03
+  nextScene: 
+  canChange: 0
+  mood_slider: {fileID: 0}
+  er_slider: {fileID: 0}
 --- !u!1 &2139701989
 GameObject:
   m_ObjectHideFlags: 0
