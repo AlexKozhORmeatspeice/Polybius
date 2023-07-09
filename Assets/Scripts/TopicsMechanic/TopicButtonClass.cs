@@ -14,12 +14,17 @@ public class TopicButtonClass : MonoBehaviour // <3
     public TMP_Text text;
     public GameObject Manager;
     public bool canChangeTopic;
+    private AudioSource sound;
+    public List<AudioClip> sounds;
+    private bool isPlaying;
     void Start()
     {
         Manager = GameObject.Find("Topic_Manager");
+        sound = GetComponent<AudioSource>();
         topicButton = GetComponent<Button>();
         text = GetComponent<TMP_Text>();
         canChangeTopic = true;
+        isPlaying = false;
         topicButton.onClick.AddListener(TaskOnClick);
     }
 
@@ -27,8 +32,21 @@ public class TopicButtonClass : MonoBehaviour // <3
     {
         if (canChangeTopic)
         {
+            sound.clip = sounds[1];
+            sound.volume = 1f;
             Manager.GetComponent<TopicManager>().UpdateByUser(topic_name, mood_update, engagement_update, icon);
         }
+        else 
+        {   
+            sound.clip = sounds[0];
+            sound.volume = 0.6f;
+        }
+        if (!isPlaying)
+        { 
+            StartCoroutine(DoSound());
+           
+        }
+        
     }
     public void DataUpdate(TopicClass topic)
     {
@@ -42,6 +60,15 @@ public class TopicButtonClass : MonoBehaviour // <3
         return ($"{topic_name}\nmood:{(mood_update>0 ? "+":"")}{mood_update}\ner:{(engagement_update > 0 ? "+" : "")}{engagement_update}");
     }
 
-  
+  private IEnumerator DoSound()
+    {
+        if (!isPlaying)
+        {
+            isPlaying = true;
+            sound.Play();
+        }
+        yield return new WaitForSeconds(0.4f);
+        isPlaying = false;
+    }
 
 }
